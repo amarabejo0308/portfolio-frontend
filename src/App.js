@@ -7,10 +7,10 @@ function App() {
         fetch("http://localhost:8080/api/projects")
             .then(response => response.json())
             .then(data => {
-                console.log(data); // just to see data in console
+                console.log("Data from backend:", data);
                 setProjects(data);
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => console.error("Error fetching projects:", error));
     }, []);
 
     return (
@@ -21,11 +21,15 @@ function App() {
                 <p>No projects found</p>
             ) : (
                 projects.map(project => (
-                    <div key={project.id} style={{
-                        border: "1px solid #ccc",
-                        padding: "10px",
-                        marginBottom: "10px"
-                    }}>
+                    <div
+                        key={project.id}
+                        style={{
+                            border: "1px solid #ccc",
+                            padding: "10px",
+                            marginBottom: "10px",
+                            borderRadius: "5px"
+                        }}
+                    >
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
                         <p><strong>Image:</strong> {project.imageUrl}</p>
