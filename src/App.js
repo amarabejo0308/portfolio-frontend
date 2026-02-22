@@ -1,41 +1,40 @@
 import React, { useEffect, useState } from "react";
+import ProjectCard from "./components/ProjectCard";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:8080/api/projects")
-            .then(response => response.json())
-            .then(data => {
-                console.log("Data from backend:", data);
-                setProjects(data);
-            })
-            .catch(error => console.error("Error fetching projects:", error));
+            .then((response) => response.json())
+            .then((data) => setProjects(data))
+            .catch((error) => console.error("Error fetching projects:", error));
     }, []);
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>My Portfolio</h1>
+        <div style={{ fontFamily: "Arial, sans-serif" }}>
+            <Header />
 
-            {projects.length === 0 ? (
-                <p>No projects found</p>
-            ) : (
-                projects.map(project => (
-                    <div
-                        key={project.id}
-                        style={{
-                            border: "1px solid #ccc",
-                            padding: "10px",
-                            marginBottom: "10px",
-                            borderRadius: "5px"
-                        }}
-                    >
-                        <h2>{project.title}</h2>
-                        <p>{project.description}</p>
-                        <p><strong>Image:</strong> {project.imageUrl}</p>
-                    </div>
-                ))
-            )}
+            <main
+                style={{
+                    padding: "20px",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                    gap: "20px",
+                }}
+            >
+                {projects.length === 0 ? (
+                    <p>No projects found</p>
+                ) : (
+                    projects.map((project) => (
+                        <ProjectCard key={project.id} project={project} />
+                    ))
+                )}
+            </main>
+
+            <Footer />
         </div>
     );
 }
