@@ -149,6 +149,50 @@ function App() {
             </main>
 
             <Footer />
+
+            <section style={{ marginTop: "60px", textAlign: "center" }}>
+                <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>
+                    Contact
+                </h2>
+
+                <p style={{ marginBottom: "20px", opacity: 0.8 }}>
+                    Interested in working together? Let’s connect.
+                </p>
+
+                <div style={{ display: "flex", justifyContent: "center", gap: "20px", flexWrap: "wrap" }}>
+
+                    <a
+                        href="amarabejo0308@gmail.com"
+                        style={{
+                            padding: "10px 20px",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            backgroundColor: darkMode ? "#2563eb" : "#0077ff",
+                            color: "white",
+                            transition: "0.3s",
+                        }}
+                    >
+                        Email Me
+                    </a>
+
+                    <a
+                        href="https://github.com/amarabejo0308/"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            padding: "10px 20px",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            backgroundColor: darkMode ? "#374151" : "#e5e7eb",
+                            color: darkMode ? "white" : "#111",
+                            transition: "0.3s",
+                        }}
+                    >
+                        GitHub
+                    </a>
+
+                </div>
+            </section>
         </div>
     );
 }
