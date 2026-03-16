@@ -44,28 +44,91 @@ function App() {
                 </div>
 
 
-                {/* Name Section */}
-                <div style={{ textAlign: "center", marginBottom: "50px" }}>
-                    <h1
-                        style={{
-                            marginBottom: "15px",
-                            fontSize: "42px",
-                            fontWeight: "700",
-                            color: "#111",
-                        }}
-                    >
-                        Miguel Arabejo
-                    </h1>
+                {/* Hero Section */}
+                <section
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        flexWrap: "wrap",
+                        gap: "40px",
+                        marginBottom: "60px",
+                    }}
+                >
 
-                    <p
-                        style={{
-                            color: "#6b7280",
-                            fontSize: "18px",
-                        }}
-                    >
-                        Full Stack Developer | Spring Boot | React
-                    </p>
-                </div>
+                    {/* LEFT SIDE */}
+                    <div style={{ flex: "1", minWidth: "280px" }}>
+                        <h3 style={{ color: "#f97316", marginBottom: "10px" }}>
+                            Hello 👋
+                        </h3>
+
+                        <h1
+                            style={{
+                                fontSize: "42px",
+                                marginBottom: "10px",
+                                fontWeight: "700",
+                            }}
+                        >
+                            I'm Miguel
+                        </h1>
+
+                        <h2
+                            style={{
+                                fontSize: "28px",
+                                color: "#6b7280",
+                                marginBottom: "25px",
+                            }}
+                        >
+                            Full Stack Developer
+                        </h2>
+
+                        <div style={{ display: "flex", gap: "15px", flexWrap: "wrap" }}>
+
+                            <a
+                                href="https://github.com/amarabejo0308"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{
+                                    backgroundColor: "#2563eb",
+                                    color: "white",
+                                    padding: "10px 20px",
+                                    borderRadius: "8px",
+                                    textDecoration: "none",
+                                }}
+                            >
+                                GitHub
+                            </a>
+
+                            <a
+                                href="#contact"
+                                style={{
+                                    border: "2px solid #2563eb",
+                                    color: "#2563eb",
+                                    padding: "10px 20px",
+                                    borderRadius: "8px",
+                                    textDecoration: "none",
+                                }}
+                            >
+                                Contact Me
+                            </a>
+
+                        </div>
+                    </div>
+
+                    {/* RIGHT SIDE (PHOTO) */}
+                    <div style={{ flex: "1", textAlign: "center", minWidth: "250px" }}>
+                        <img
+                            src="/images/miguel.png"
+                            alt="Miguel"
+                            style={{
+                                width: "300px",
+                                borderRadius: "20px",
+                                boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
+                            }}
+                        />
+                    </div>
+
+                </section>
 
                 {/* About Section */}
                 <div
